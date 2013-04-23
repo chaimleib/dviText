@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="LIT" num="243" delta="new" >Logical network <arg fmt="%s" index="1">GPIO_SW_S</arg> has no load.
+</msg>
+
+<msg type="info" file="LIT" num="395" delta="new" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">4</arg> more times for the following (max. 5 shown):
+<arg fmt="%s" index="3">pixelfeed/feeder_fifo/full,
+pixelfeed/feeder_fifo/BU2/U0/gconvfifo.rf/grf.rf/gcx.clkx/rd_pntr_gc_asreg[2],
+pixelfeed/feeder_fifo/BU2/U0/gconvfifo.rf/grf.rf/gcx.clkx/rd_pntr_gc_asreg[1],
+pixelfeed/feeder_fifo/BU2/U0/gconvfifo.rf/grf.rf/gcx.clkx/rd_pntr_gc_asreg[0]</arg>
+To see the details of these <arg fmt="%s" index="4">info</arg> messages, please use the -detail switch.
+</msg>
+
+<msg type="info" file="MapLib" num="562" delta="new" >No environment variables are currently set.
+</msg>
+
+<msg type="info" file="MapLib" num="841" delta="new" >Changing COMPENSATION attribute from <arg fmt="%s" index="1">SYSTEM_SYNCHRONOUS</arg> to <arg fmt="%s" index="2">INTERNAL</arg> for PLL_ADV <arg fmt="%s" index="3">user_clk_pll</arg>.
+</msg>
+
+<msg type="info" file="LIT" num="244" delta="new" >All of the single ended outputs in this design are using slew rate limited output drivers. The delay on speed critical single ended outputs can be dramatically reduced by designating them as fast outputs.
+</msg>
+
+<msg type="warning" file="Pack" num="2874" delta="new" >Trimming timing constraints from pin <arg fmt="%s" index="1">pixelfeed/feeder_fifo/BU2/U0/gconvfifo.rf/grf.rf/mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP.SINGLE_PRIM36.TDP</arg>
+of frag <arg fmt="%s" index="2">REGCLKAU</arg> connected to power/ground net <arg fmt="%s" index="3">pixelfeed/feeder_fifo/BU2/U0/gconvfifo.rf/grf.rf/mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP.SINGLE_PRIM36.TDP_REGCLKAU_tiesig</arg>
+</msg>
+
+<msg type="warning" file="Pack" num="2874" delta="new" >Trimming timing constraints from pin <arg fmt="%s" index="1">pixelfeed/feeder_fifo/BU2/U0/gconvfifo.rf/grf.rf/mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP.SINGLE_PRIM36.TDP</arg>
+of frag <arg fmt="%s" index="2">REGCLKAL</arg> connected to power/ground net <arg fmt="%s" index="3">pixelfeed/feeder_fifo/BU2/U0/gconvfifo.rf/grf.rf/mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP.SINGLE_PRIM36.TDP_REGCLKAL_tiesig</arg>
+</msg>
+
+<msg type="warning" file="Pack" num="2874" delta="new" >Trimming timing constraints from pin <arg fmt="%s" index="1">pixelfeed/feeder_fifo/BU2/U0/gconvfifo.rf/grf.rf/mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP.SINGLE_PRIM36.TDP</arg>
+of frag <arg fmt="%s" index="2">REGCLKBU</arg> connected to power/ground net <arg fmt="%s" index="3">pixelfeed/feeder_fifo/BU2/U0/gconvfifo.rf/grf.rf/mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP.SINGLE_PRIM36.TDP_REGCLKBU_tiesig</arg>
+</msg>
+
+<msg type="warning" file="Pack" num="2874" delta="new" >Trimming timing constraints from pin <arg fmt="%s" index="1">pixelfeed/feeder_fifo/BU2/U0/gconvfifo.rf/grf.rf/mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP.SINGLE_PRIM36.TDP</arg>
+of frag <arg fmt="%s" index="2">REGCLKBL</arg> connected to power/ground net <arg fmt="%s" index="3">pixelfeed/feeder_fifo/BU2/U0/gconvfifo.rf/grf.rf/mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP.SINGLE_PRIM36.TDP_REGCLKBL_tiesig</arg>
+</msg>
+
+<msg type="warning" file="Pack" num="2874" delta="new" >Trimming timing constraints from pin <arg fmt="%s" index="1">pixelfeed/feeder_fifo/BU2/U0/gconvfifo.rf/grf.rf/mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP.SINGLE_PRIM36.TDP</arg>
+of frag <arg fmt="%s" index="2">REGCLKAU</arg> connected to power/ground net <arg fmt="%s" index="3">pixelfeed/feeder_fifo/BU2/U0/gconvfifo.rf/grf.rf/mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP.SINGLE_PRIM36.TDP_REGCLKAU_tiesig</arg>
+</msg>
+
+<msg type="warning" file="Pack" num="2874" delta="new" >Trimming timing constraints from pin <arg fmt="%s" index="1">pixelfeed/feeder_fifo/BU2/U0/gconvfifo.rf/grf.rf/mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP.SINGLE_PRIM36.TDP</arg>
+of frag <arg fmt="%s" index="2">REGCLKAL</arg> connected to power/ground net <arg fmt="%s" index="3">pixelfeed/feeder_fifo/BU2/U0/gconvfifo.rf/grf.rf/mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP.SINGLE_PRIM36.TDP_REGCLKAL_tiesig</arg>
+</msg>
+
+<msg type="warning" file="Pack" num="2874" delta="new" >Trimming timing constraints from pin <arg fmt="%s" index="1">pixelfeed/feeder_fifo/BU2/U0/gconvfifo.rf/grf.rf/mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP.SINGLE_PRIM36.TDP</arg>
+of frag <arg fmt="%s" index="2">REGCLKBU</arg> connected to power/ground net <arg fmt="%s" index="3">pixelfeed/feeder_fifo/BU2/U0/gconvfifo.rf/grf.rf/mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP.SINGLE_PRIM36.TDP_REGCLKBU_tiesig</arg>
+</msg>
+
+<msg type="warning" file="Pack" num="2874" delta="new" >Trimming timing constraints from pin <arg fmt="%s" index="1">pixelfeed/feeder_fifo/BU2/U0/gconvfifo.rf/grf.rf/mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP.SINGLE_PRIM36.TDP</arg>
+of frag <arg fmt="%s" index="2">REGCLKBL</arg> connected to power/ground net <arg fmt="%s" index="3">pixelfeed/feeder_fifo/BU2/U0/gconvfifo.rf/grf.rf/mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP.SINGLE_PRIM36.TDP_REGCLKBL_tiesig</arg>
+</msg>
+
+<msg type="info" file="Pack" num="1716" delta="new" >Initializing temperature to <arg fmt="%0.3f" index="1">85.000</arg> Celsius. (default - Range: <arg fmt="%0.3f" index="2">0.000</arg> to <arg fmt="%0.3f" index="3">85.000</arg> Celsius)
+</msg>
+
+<msg type="info" file="Pack" num="1720" delta="new" >Initializing voltage to <arg fmt="%0.3f" index="1">0.950</arg> Volts. (default - Range: <arg fmt="%0.3f" index="2">0.950</arg> to <arg fmt="%0.3f" index="3">1.050</arg> Volts)
+</msg>
+
+<msg type="info" file="Map" num="215" delta="new" >The Interim Design Summary has been generated in the MAP Report (.mrp).
+</msg>
+
+<msg type="warning" file="Place" num="838" delta="new" >An IO Bus with more than one IO standard is found.
+<arg fmt="%s" index="1">Components associated with this bus are as follows: 
+	 Comp: GPIO_LED&lt;0&gt;   IOSTANDARD = LVCMOS25
+	 Comp: GPIO_LED&lt;1&gt;   IOSTANDARD = LVCMOS25
+	 Comp: GPIO_LED&lt;2&gt;   IOSTANDARD = LVCMOS25
+	 Comp: GPIO_LED&lt;3&gt;   IOSTANDARD = SSTL18_II_DCI
+	 Comp: GPIO_LED&lt;4&gt;   IOSTANDARD = LVCMOS25
+	 Comp: GPIO_LED&lt;5&gt;   IOSTANDARD = SSTL18_II_DCI
+	 Comp: GPIO_LED&lt;6&gt;   IOSTANDARD = SSTL18_II_DCI
+	 Comp: GPIO_LED&lt;7&gt;   IOSTANDARD = SSTL18_II_DCI
+
+</arg>
+</msg>
+
+<msg type="info" file="Pack" num="1650" delta="new" >Map created a placed design.
+</msg>
+
+</messages>
+

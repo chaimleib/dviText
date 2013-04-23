@@ -1,0 +1,12 @@
+# Output products list for <mig_wdf>
+fifo_generator_readme.txt
+fifo_generator_ug175.pdf
+mig_wdf.asy
+mig_wdf.gise
+mig_wdf.ngc
+mig_wdf.v
+mig_wdf.veo
+mig_wdf.xco
+mig_wdf.xise
+mig_wdf_flist.txt
+mig_wdf_xmdf.tcl

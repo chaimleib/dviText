@@ -1,0 +1,12 @@
+# Output products list for <mig_af>
+fifo_generator_readme.txt
+fifo_generator_ug175.pdf
+mig_af.asy
+mig_af.gise
+mig_af.ngc
+mig_af.v
+mig_af.veo
+mig_af.xco
+mig_af.xise
+mig_af_flist.txt
+mig_af_xmdf.tcl

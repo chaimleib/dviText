@@ -1,0 +1,2273 @@
+Release 14.1 - xst P.15xf (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> 
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "ml505top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "ml505top"
+Output Format                      : NGC
+Target Device                      : xc5vlx110t-1-ff1136
+
+---- Source Options
+Top Module Name                    : ml505top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Off
+Reduce Control Sets                : Off
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "../../src/vram.v" in library work
+Compiling verilog file "../../src/DVI/Const.v" in library work
+Compiling verilog file "../../src/DVI/CountCompare.v" in library work
+WARNING:HDLCompilers:38 - "../../src/DVI/CountCompare.v" line 43 Macro 'MACROSAFE' redefined
+Compiling verilog include file "../../src/DVI/Const.v"
+WARNING:HDLCompilers:38 - "../../src/DVI/Const.v" line 69 Macro 'MACROSAFE' redefined
+Module <vram> compiled
+Compiling verilog file "../../src/DVI/CountRegion.v" in library work
+Compiling verilog include file "../../src/DVI/Const.v"
+Module <CountCompare> compiled
+Compiling verilog file "../../src/DVI/Counter.v" in library work
+Module <CountRegion> compiled
+Compiling verilog file "../../src/DVI/DVI.v" in library work
+Module <Counter> compiled
+Compiling verilog file "../../src/DVI/DVIData.v" in library work
+Module <DVI> compiled
+Compiling verilog file "../../src/DVI/DVIInitial.v" in library work
+Module <DVIData> compiled
+Compiling verilog include file "../../src/DVI/I2CDRAMMaster.constants"
+Compiling verilog include file "../../src/DVI/I2CMaster.constants"
+Compiling verilog file "../../src/DVI/FIFOInitial.v" in library work
+WARNING:HDLCompilers:38 - "../../src/DVI/FIFOInitial.v" line 43 Macro 'MACROSAFE' redefined
+Compiling verilog include file "../../src/DVI/Const.v"
+WARNING:HDLCompilers:38 - "../../src/DVI/Const.v" line 69 Macro 'MACROSAFE' redefined
+Module <DVIInitial> compiled
+Compiling verilog file "../../src/DVI/FIFORegControl.v" in library work
+Module <FIFOInitial> compiled
+Compiling verilog file "../../src/DVI/FIFORegister.v" in library work
+Module <FIFORegControl> compiled
+Compiling verilog file "../../src/DVI/I2CDRAMMaster.v" in library work
+Compiling verilog include file "../../src/DVI/Const.v"
+Module <FIFORegister> compiled
+Compiling verilog include file "../../src/DVI/I2CDRAMMaster.constants"
+Compiling verilog include file "../../src/DVI/I2CMaster.constants"
+Compiling verilog file "../../src/DVI/I2CMaster.v" in library work
+WARNING:HDLCompilers:38 - "../../src/DVI/I2CMaster.v" line 44 Macro 'MACROSAFE' redefined
+Compiling verilog include file "../../src/DVI/Const.v"
+WARNING:HDLCompilers:38 - "../../src/DVI/Const.v" line 69 Macro 'MACROSAFE' redefined
+Module <I2CDRAMMaster> compiled
+Compiling verilog include file "../../src/DVI/I2CMaster.constants"
+Compiling verilog file "../../src/DVI/PixelCounter.v" in library work
+WARNING:HDLCompilers:38 - "../../src/DVI/PixelCounter.v" line 44 Macro 'MACROSAFE' redefined
+Compiling verilog include file "../../src/DVI/Const.v"
+WARNING:HDLCompilers:38 - "../../src/DVI/Const.v" line 69 Macro 'MACROSAFE' redefined
+Module <I2CMaster> compiled
+Compiling verilog file "../../src/DVI/Register.v" in library work
+Module <PixelCounter> compiled
+Compiling verilog file "../../src/DVI/SDR2DDR.v" in library work
+Compiling verilog include file "../../src/DVI/Const.v"
+Module <Register> compiled
+Compiling verilog file "../../src/DVI/ShiftRegister.v" in library work
+Module <SDR2DDR> compiled
+Compiling verilog file "../../src/ml505top.v" in library work
+Module <ShiftRegister> compiled
+Compiling verilog file "../../src/IORegister.v" in library work
+Module <ml505top> compiled
+Compiling verilog file "../../src/PixelFeeder.v" in library work
+Module <IORegister> compiled
+Compiling verilog file "../../src/pixel_fifo/pixel_fifo.v" in library work
+Module <PixelFeeder> compiled
+Module <pixel_fifo> compiled
+No errors in compilation
+Analysis of file <"ml505top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <ml505top> in library <work>.
+
+Analyzing hierarchy for module <vram> in library <work>.
+
+Analyzing hierarchy for module <PixelFeeder> in library <work> with parameters.
+	FETCH = "1"
+	IDLE = "0"
+
+Analyzing hierarchy for module <DVI> in library <work> with parameters.
+	BackH = "00000000000000000000000001000000"
+	BackV = "00000000000000000000000000010111"
+	ClockFreq = "00000010111110101111000010000000"
+	FrontH = "00000000000000000000000000111000"
+	FrontV = "00000000000000000000000000100101"
+	Height = "00000000000000000000001010011010"
+	I2CAddress = "1110110"
+	I2CRate = "00000000000000011000011010100000"
+	PulseH = "00000000000000000000000001111000"
+	PulseV = "00000000000000000000000000000110"
+	Width = "00000000000000000000010000010000"
+
+Analyzing hierarchy for module <DVIData> in library <work> with parameters.
+	BackH = "00000000000000000000000001000000"
+	BackV = "00000000000000000000000000010111"
+	FrontH = "00000000000000000000000000111000"
+	FrontV = "00000000000000000000000000100101"
+	Height = "00000000000000000000001010011010"
+	PulseH = "00000000000000000000000001111000"
+	PulseV = "00000000000000000000000000000110"
+	Width = "00000000000000000000010000010000"
+
+Analyzing hierarchy for module <DVIInitial> in library <work> with parameters.
+	ClockFreq = "00000010111110101111000010000000"
+	I2CAddress = "1110110"
+	I2CDCMD_CWidth = "00000000000000000000000000000001"
+	I2CDCMD_Read = "1"
+	I2CDCMD_Write = "0"
+	I2CInitVals = "1100000000001001000010000001011001100000"
+	I2CMCMD_CWidth = "00000000000000000000000000000010"
+	I2CMCMD_Read = "01"
+	I2CMCMD_Restart = "11"
+	I2CMCMD_Write = "10"
+	I2CRate = "00000000000000011000011010100000"
+
+Analyzing hierarchy for module <Register> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "X"
+	ResetValue = "0"
+	SetValue = "1"
+	Width = "00000000000000000000000000000001"
+
+Analyzing hierarchy for module <SDR2DDR> in library <work> with parameters.
+	DDRWidth = "00000000000000000000000000000010"
+	Interleave = "00000000000000000000000000000001"
+	SDRWidth = "00000000000000000000000000000100"
+
+Analyzing hierarchy for module <IORegister> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "XXX"
+	ResetValue = "000"
+	SetValue = "111"
+	Width = "00000000000000000000000000000011"
+
+Analyzing hierarchy for module <SDR2DDR> in library <work> with parameters.
+	DDRWidth = "00000000000000000000000000001100"
+	Interleave = "00000000000000000000000000000000"
+	SDRWidth = "00000000000000000000000000011000"
+
+Analyzing hierarchy for module <PixelCounter> in library <work> with parameters.
+	ActiveH = "00000000000000000000001100100000"
+	ActiveV = "00000000000000000000001001011000"
+	BackH = "00000000000000000000000001000000"
+	BackV = "00000000000000000000000000010111"
+	FrontH = "00000000000000000000000000111000"
+	FrontV = "00000000000000000000000000100101"
+	Height = "00000000000000000000001010011010"
+	PulseH = "00000000000000000000000001111000"
+	PulseV = "00000000000000000000000000000110"
+	Width = "00000000000000000000010000010000"
+	XWidth = "00000000000000000000000000001011"
+	YWidth = "00000000000000000000000000001010"
+
+Analyzing hierarchy for module <FIFOInitial> in library <work> with parameters.
+	A0Width = "00000000000000000000000000000011"
+	A1Width = "00000000000000000000000000000011"
+	Depth = "00000000000000000000000000000101"
+	ShiftBased = "00000000000000000000000000000001"
+	Value = "0100100100100001001100110011010000110110"
+	Width = "00000000000000000000000000001000"
+
+Analyzing hierarchy for module <FIFOInitial> in library <work> with parameters.
+	A0Width = "00000000000000000000000000000011"
+	A1Width = "00000000000000000000000000000011"
+	Depth = "00000000000000000000000000000101"
+	ShiftBased = "00000000000000000000000000000001"
+	Value = "1100000000001001000010000001011001100000"
+	Width = "00000000000000000000000000001000"
+
+Analyzing hierarchy for module <I2CDRAMMaster> in library <work> with parameters.
+	CAWidth = "00000000000000000000000000001000"
+	ClockFreq = "00000010111110101111000010000000"
+	DWidth = "00000000000000000000000000001000"
+	I2CDCMD_CWidth = "00000000000000000000000000000001"
+	I2CDCMD_Read = "1"
+	I2CDCMD_Write = "0"
+	I2CMCMD_CWidth = "00000000000000000000000000000010"
+	I2CMCMD_Read = "01"
+	I2CMCMD_Restart = "11"
+	I2CMCMD_Write = "10"
+	I2CRate = "00000000000000011000011010100000"
+	LRWidth = "00000000000000000000000000010001"
+	SAWidth = "00000000000000000000000000000111"
+	STATE_Address = "010"
+	STATE_Idle = "000"
+	STATE_ReAddress = "101"
+	STATE_Read = "110"
+	STATE_Restart = "100"
+	STATE_SAddress = "001"
+	STATE_Stop = "111"
+	STATE_Write = "011"
+	SWidth = "00000000000000000000000000000011"
+	SingleSlave = "00000000000000000000000000000001"
+	SlaveAddress = "1110110"
+	WACWidth = "00000000000000000000000000000001"
+	WAWidth = "00000000000000000000000000001000"
+	WAWords = "00000000000000000000000000000001"
+
+Analyzing hierarchy for module <Counter> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Down = "00000000000000000000000000000000"
+	Initial = "XXXXXXXXXXX"
+	Limited = "00000000000000000000000000000000"
+	ResetValue = "00000000000"
+	SetValue = "11111111111"
+	Width = "00000000000000000000000000001011"
+
+Analyzing hierarchy for module <CountCompare> in library <work> with parameters.
+	CWidth = "00000000000000000000000000001011"
+	CWidthCheck = "00000000000000000000000000001011"
+	Compare = "00000000000000000000010000001111"
+	Width = "00000000000000000000000000001011"
+
+Analyzing hierarchy for module <Counter> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Down = "00000000000000000000000000000000"
+	Initial = "XXXXXXXXXX"
+	Limited = "00000000000000000000000000000000"
+	ResetValue = "0000000000"
+	SetValue = "1111111111"
+	Width = "00000000000000000000000000001010"
+
+Analyzing hierarchy for module <CountCompare> in library <work> with parameters.
+	CWidth = "00000000000000000000000000001010"
+	CWidthCheck = "00000000000000000000000000001010"
+	Compare = "00000000000000000000001010011001"
+	Width = "00000000000000000000000000001010"
+
+Analyzing hierarchy for module <CountRegion> in library <work> with parameters.
+	EnableActive = "1"
+	EnablePost = "1"
+	EnablePre = "0"
+	End = "00000000000000000000001100100000"
+	Start = "00000000000000000000000000000000"
+	UseMagnitude = "0"
+	Width = "00000000000000000000000000001011"
+
+Analyzing hierarchy for module <CountRegion> in library <work> with parameters.
+	EnableActive = "1"
+	EnablePost = "1"
+	EnablePre = "0"
+	End = "00000000000000000000001001011000"
+	Start = "00000000000000000000000000000000"
+	UseMagnitude = "0"
+	Width = "00000000000000000000000000001010"
+
+Analyzing hierarchy for module <CountRegion> in library <work> with parameters.
+	EnableActive = "1"
+	EnablePost = "1"
+	EnablePre = "1"
+	End = "00000000000000000000001111010000"
+	Start = "00000000000000000000001101011000"
+	UseMagnitude = "0"
+	Width = "00000000000000000000000000001011"
+
+Analyzing hierarchy for module <CountRegion> in library <work> with parameters.
+	EnableActive = "1"
+	EnablePost = "1"
+	EnablePre = "1"
+	End = "00000000000000000000001010000011"
+	Start = "00000000000000000000001001111101"
+	UseMagnitude = "0"
+	Width = "00000000000000000000000000001010"
+
+Analyzing hierarchy for module <Register> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "0"
+	ResetValue = "0"
+	SetValue = "1"
+	Width = "00000000000000000000000000000001"
+
+Analyzing hierarchy for module <ShiftRegister> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "0100100100100001001100110011010000110110"
+	PWidth = "00000000000000000000000000101000"
+	ResetValue = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+	Reverse = "00000000000000000000000000000000"
+	SWidth = "00000000000000000000000000001000"
+	SetValue = "1111111111111111111111111111111111111111"
+
+Analyzing hierarchy for module <ShiftRegister> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "111110"
+	PWidth = "00000000000000000000000000000110"
+	ResetValue = "XXXXX"
+	Reverse = "00000000000000000000000000000000"
+	SWidth = "00000000000000000000000000000001"
+	SetValue = "111111"
+
+Analyzing hierarchy for module <ShiftRegister> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "1100000000001001000010000001011001100000"
+	PWidth = "00000000000000000000000000101000"
+	ResetValue = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+	Reverse = "00000000000000000000000000000000"
+	SWidth = "00000000000000000000000000001000"
+	SetValue = "1111111111111111111111111111111111111111"
+
+Analyzing hierarchy for module <I2CMaster> in library <work> with parameters.
+	ClockFreq = "00000010111110101111000010000000"
+	CycleMax = "00000000000000000000000001111101"
+	CycleWidth = "00000000000000000000000000000111"
+	I2CMCMD_CWidth = "00000000000000000000000000000010"
+	I2CMCMD_Read = "01"
+	I2CMCMD_Restart = "11"
+	I2CMCMD_Write = "10"
+	I2CRate = "00000000000000011000011010100000"
+	STATE_CheckAck = "011"
+	STATE_NOP = "000"
+	STATE_Read = "100"
+	STATE_Restart = "111"
+	STATE_SendAck = "101"
+	STATE_Start = "001"
+	STATE_Stop = "110"
+	STATE_Write = "010"
+	STATE_X = "XXX"
+
+Analyzing hierarchy for module <FIFORegister> in library <work> with parameters.
+	BWLatency = "00000000000000000000000000000000"
+	Conservative = "00000000000000000000000000000000"
+	FWLatency = "00000000000000000000000000000001"
+	Initial = "XXXXXXXXXXXXXXXXX"
+	InitialValid = "0"
+	ResetValid = "0"
+	ResetValue = "00000000000000000"
+	Width = "00000000000000000000000000010001"
+
+Analyzing hierarchy for module <FIFORegister> in library <work> with parameters.
+	BWLatency = "00000000000000000000000000000000"
+	Conservative = "00000000000000000000000000000000"
+	FWLatency = "00000000000000000000000000000001"
+	Initial = "XXXXXXXX"
+	InitialValid = "0"
+	ResetValid = "0"
+	ResetValue = "00000000"
+	Width = "00000000000000000000000000001000"
+
+Analyzing hierarchy for module <Register> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "XXXXXXXXXXX"
+	ResetValue = "00000000000"
+	SetValue = "11111111111"
+	Width = "00000000000000000000000000001011"
+
+Analyzing hierarchy for module <Register> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "XXXXXXXXXX"
+	ResetValue = "0000000000"
+	SetValue = "1111111111"
+	Width = "00000000000000000000000000001010"
+
+Analyzing hierarchy for module <Register> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "XXX"
+	ResetValue = "010"
+	SetValue = "111"
+	Width = "00000000000000000000000000000011"
+
+Analyzing hierarchy for module <CountCompare> in library <work> with parameters.
+	CWidth = "00000000000000000000000000001010"
+	CWidthCheck = "00000000000000000000000000001010"
+	Compare = "00000000000000000000001100011111"
+	Width = "00000000000000000000000000001011"
+
+Analyzing hierarchy for module <CountCompare> in library <work> with parameters.
+	CWidth = "00000000000000000000000000001010"
+	CWidthCheck = "00000000000000000000000000001010"
+	Compare = "00000000000000000000001001010111"
+	Width = "00000000000000000000000000001010"
+
+Analyzing hierarchy for module <Register> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "XXX"
+	ResetValue = "001"
+	SetValue = "111"
+	Width = "00000000000000000000000000000011"
+
+Analyzing hierarchy for module <CountCompare> in library <work> with parameters.
+	CWidth = "00000000000000000000000000001010"
+	CWidthCheck = "00000000000000000000000000001010"
+	Compare = "00000000000000000000001101010111"
+	Width = "00000000000000000000000000001011"
+
+Analyzing hierarchy for module <CountCompare> in library <work> with parameters.
+	CWidth = "00000000000000000000000000001010"
+	CWidthCheck = "00000000000000000000000000001010"
+	Compare = "00000000000000000000001111001111"
+	Width = "00000000000000000000000000001011"
+
+Analyzing hierarchy for module <CountCompare> in library <work> with parameters.
+	CWidth = "00000000000000000000000000001010"
+	CWidthCheck = "00000000000000000000000000001010"
+	Compare = "00000000000000000000001001111100"
+	Width = "00000000000000000000000000001010"
+
+Analyzing hierarchy for module <CountCompare> in library <work> with parameters.
+	CWidth = "00000000000000000000000000001010"
+	CWidthCheck = "00000000000000000000000000001010"
+	Compare = "00000000000000000000001010000010"
+	Width = "00000000000000000000000000001010"
+
+Analyzing hierarchy for module <Register> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "0100100100100001001100110011010000110110"
+	ResetValue = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+	SetValue = "1111111111111111111111111111111111111111"
+	Width = "00000000000000000000000000101000"
+
+Analyzing hierarchy for module <Register> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "111110"
+	ResetValue = "XXXXX"
+	SetValue = "111111"
+	Width = "00000000000000000000000000000110"
+
+Analyzing hierarchy for module <Register> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "1100000000001001000010000001011001100000"
+	ResetValue = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+	SetValue = "1111111111111111111111111111111111111111"
+	Width = "00000000000000000000000000101000"
+
+Analyzing hierarchy for module <ShiftRegister> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "XXX"
+	PWidth = "00000000000000000000000000000011"
+	ResetValue = "000"
+	Reverse = "00000000000000000000000000000000"
+	SWidth = "00000000000000000000000000000001"
+	SetValue = "111"
+
+Analyzing hierarchy for module <Register> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "X"
+	ResetValue = "0"
+	SetValue = "1"
+	Width = "00000000000000000000000000000001"
+
+Analyzing hierarchy for module <Register> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "X"
+	ResetValue = "0"
+	SetValue = "1"
+	Width = "00000000000000000000000000000001"
+
+Analyzing hierarchy for module <ShiftRegister> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "XXXXXXXX"
+	PWidth = "00000000000000000000000000001000"
+	ResetValue = "00000000"
+	Reverse = "00000000000000000000000000000000"
+	SWidth = "00000000000000000000000000000001"
+	SetValue = "11111111"
+
+Analyzing hierarchy for module <Counter> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Down = "00000000000000000000000000000000"
+	Initial = "XXXXXXX"
+	Limited = "00000000000000000000000000000000"
+	ResetValue = "0000000"
+	SetValue = "1111111"
+	Width = "00000000000000000000000000000111"
+
+Analyzing hierarchy for module <CountCompare> in library <work> with parameters.
+	CWidth = "00000000000000000000000000000111"
+	CWidthCheck = "00000000000000000000000000000111"
+	Compare = "00000000000000000000000001111100"
+	Width = "00000000000000000000000000000111"
+
+Analyzing hierarchy for module <Counter> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Down = "00000000000000000000000000000000"
+	Initial = "XX"
+	Limited = "00000000000000000000000000000000"
+	ResetValue = "00"
+	SetValue = "11"
+	Width = "00000000000000000000000000000010"
+
+Analyzing hierarchy for module <Counter> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Down = "00000000000000000000000000000000"
+	Initial = "XXX"
+	Limited = "00000000000000000000000000000000"
+	ResetValue = "000"
+	SetValue = "111"
+	Width = "00000000000000000000000000000011"
+
+Analyzing hierarchy for module <Register> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "XXXXXXXXXXXXXXXXX"
+	ResetValue = "00000000000000000"
+	SetValue = "11111111111111111"
+	Width = "00000000000000000000000000010001"
+
+Analyzing hierarchy for module <FIFORegControl> in library <work> with parameters.
+	BWLatency = "00000000000000000000000000000000"
+	FWLatency = "00000000000000000000000000000001"
+	InitialValid = "0"
+	ResetValid = "0"
+
+Analyzing hierarchy for module <Register> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "XXXXXXXX"
+	ResetValue = "00000000"
+	SetValue = "11111111"
+	Width = "00000000000000000000000000001000"
+
+Analyzing hierarchy for module <Register> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "XXX"
+	ResetValue = "000"
+	SetValue = "111"
+	Width = "00000000000000000000000000000011"
+
+Analyzing hierarchy for module <Register> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "XXXXXXXX"
+	ResetValue = "00000000"
+	SetValue = "11111111"
+	Width = "00000000000000000000000000001000"
+
+Analyzing hierarchy for module <Register> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "XXXXXXX"
+	ResetValue = "0000000"
+	SetValue = "1111111"
+	Width = "00000000000000000000000000000111"
+
+Analyzing hierarchy for module <Register> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "XX"
+	ResetValue = "00"
+	SetValue = "11"
+	Width = "00000000000000000000000000000010"
+
+Analyzing hierarchy for module <Register> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "XXX"
+	ResetValue = "000"
+	SetValue = "111"
+	Width = "00000000000000000000000000000011"
+
+Analyzing hierarchy for module <Register> in library <work> with parameters.
+	AsyncReset = "00000000000000000000000000000000"
+	AsyncSet = "00000000000000000000000000000000"
+	Initial = "0"
+	ResetValue = "0"
+	SetValue = "1"
+	Width = "00000000000000000000000000000001"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <ml505top>.
+Module <ml505top> is correct for synthesis.
+ 
+    Set user-defined property "BANDWIDTH =  OPTIMIZED" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "CLKFBOUT_MULT =  24" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "CLKFBOUT_PHASE =  0.000000" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "CLKIN_PERIOD =  10.000000" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "CLKOUT0_DIVIDE =  12" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "CLKOUT0_DUTY_CYCLE =  0.500000" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "CLKOUT0_PHASE =  0.000000" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "CLKOUT1_DIVIDE =  3" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "CLKOUT1_DUTY_CYCLE =  0.500000" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "CLKOUT1_PHASE =  0.000000" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "CLKOUT2_DIVIDE =  3" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "CLKOUT2_DUTY_CYCLE =  0.500000" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "CLKOUT2_PHASE =  0.000000" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "CLKOUT3_DIVIDE =  3" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "CLKOUT3_DUTY_CYCLE =  0.500000" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "CLKOUT3_PHASE =  90.000000" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "CLKOUT4_DIVIDE =  6" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "CLKOUT4_DUTY_CYCLE =  0.500000" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "CLKOUT4_PHASE =  0.000000" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "CLKOUT5_DIVIDE =  12" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "CLKOUT5_DUTY_CYCLE =  0.500000" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "CLKOUT5_PHASE =  0.000000" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "CLK_FEEDBACK =  CLKFBOUT" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "COMPENSATION =  SYSTEM_SYNCHRONOUS" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "DIVCLK_DIVIDE =  4" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "REF_JITTER =  0.100000" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "RESET_ON_LOSS_OF_LOCK =  FALSE" for instance <user_clk_pll> in unit <ml505top>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <user_clk_buf> in unit <ml505top>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <user_clk_buf> in unit <ml505top>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <user_clk_buf> in unit <ml505top>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <user_clk_buf> in unit <ml505top>.
+Analyzing module <vram> in library <work>.
+INFO:Xst:1433 - Contents of array <ram> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:1433 - Contents of array <ram> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:1433 - Contents of array <ram> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+Module <vram> is correct for synthesis.
+ 
+Analyzing module <PixelFeeder> in library <work>.
+	FETCH = 1'b1
+	IDLE = 1'b0
+WARNING:Xst:2211 - "../../src/pixel_fifo/pixel_fifo.v" line 63: Instantiating black box module <pixel_fifo>.
+Module <PixelFeeder> is correct for synthesis.
+ 
+Analyzing module <DVI> in library <work>.
+	BackH = 32'sb00000000000000000000000001000000
+	BackV = 32'sb00000000000000000000000000010111
+	ClockFreq = 32'sb00000010111110101111000010000000
+	FrontH = 32'sb00000000000000000000000000111000
+	FrontV = 32'sb00000000000000000000000000100101
+	Height = 32'sb00000000000000000000001010011010
+	I2CAddress = 7'b1110110
+	I2CRate = 32'sb00000000000000011000011010100000
+	PulseH = 32'sb00000000000000000000000001111000
+	PulseV = 32'sb00000000000000000000000000000110
+	Width = 32'sb00000000000000000000010000010000
+Module <DVI> is correct for synthesis.
+ 
+Analyzing module <DVIData> in library <work>.
+	BackH = 32'sb00000000000000000000000001000000
+	BackV = 32'sb00000000000000000000000000010111
+	FrontH = 32'sb00000000000000000000000000111000
+	FrontV = 32'sb00000000000000000000000000100101
+	Height = 32'sb00000000000000000000001010011010
+	PulseH = 32'sb00000000000000000000000001111000
+	PulseV = 32'sb00000000000000000000000000000110
+	Width = 32'sb00000000000000000000010000010000
+Module <DVIData> is correct for synthesis.
+ 
+Analyzing module <Register.1> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Initial = 1'bX
+	ResetValue = 1'b0
+	SetValue = 1'b1
+	Width = 32'sb00000000000000000000000000000001
+Module <Register.1> is correct for synthesis.
+ 
+Analyzing module <SDR2DDR.1> in library <work>.
+	DDRWidth = 32'sb00000000000000000000000000000010
+	Interleave = 32'sb00000000000000000000000000000001
+	SDRWidth = 32'sb00000000000000000000000000000100
+Module <SDR2DDR.1> is correct for synthesis.
+ 
+    Set user-defined property "DDR_CLK_EDGE =  SAME_EDGE" for instance <bit[0].ODDR> in unit <SDR2DDR.1>.
+    Set user-defined property "INIT =  0" for instance <bit[0].ODDR> in unit <SDR2DDR.1>.
+    Set user-defined property "SRTYPE =  SYNC" for instance <bit[0].ODDR> in unit <SDR2DDR.1>.
+    Set user-defined property "DDR_CLK_EDGE =  SAME_EDGE" for instance <bit[1].ODDR> in unit <SDR2DDR.1>.
+    Set user-defined property "INIT =  0" for instance <bit[1].ODDR> in unit <SDR2DDR.1>.
+    Set user-defined property "SRTYPE =  SYNC" for instance <bit[1].ODDR> in unit <SDR2DDR.1>.
+Analyzing module <IORegister> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Initial = 3'bXXX
+	ResetValue = 3'b000
+	SetValue = 3'b111
+	Width = 32'sb00000000000000000000000000000011
+Module <IORegister> is correct for synthesis.
+ 
+Analyzing module <SDR2DDR.2> in library <work>.
+	DDRWidth = 32'sb00000000000000000000000000001100
+	Interleave = 32'sb00000000000000000000000000000000
+	SDRWidth = 32'sb00000000000000000000000000011000
+Module <SDR2DDR.2> is correct for synthesis.
+ 
+    Set user-defined property "DDR_CLK_EDGE =  SAME_EDGE" for instance <bit[0].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "INIT =  0" for instance <bit[0].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "SRTYPE =  SYNC" for instance <bit[0].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "DDR_CLK_EDGE =  SAME_EDGE" for instance <bit[1].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "INIT =  0" for instance <bit[1].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "SRTYPE =  SYNC" for instance <bit[1].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "DDR_CLK_EDGE =  SAME_EDGE" for instance <bit[2].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "INIT =  0" for instance <bit[2].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "SRTYPE =  SYNC" for instance <bit[2].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "DDR_CLK_EDGE =  SAME_EDGE" for instance <bit[3].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "INIT =  0" for instance <bit[3].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "SRTYPE =  SYNC" for instance <bit[3].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "DDR_CLK_EDGE =  SAME_EDGE" for instance <bit[4].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "INIT =  0" for instance <bit[4].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "SRTYPE =  SYNC" for instance <bit[4].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "DDR_CLK_EDGE =  SAME_EDGE" for instance <bit[5].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "INIT =  0" for instance <bit[5].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "SRTYPE =  SYNC" for instance <bit[5].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "DDR_CLK_EDGE =  SAME_EDGE" for instance <bit[6].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "INIT =  0" for instance <bit[6].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "SRTYPE =  SYNC" for instance <bit[6].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "DDR_CLK_EDGE =  SAME_EDGE" for instance <bit[7].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "INIT =  0" for instance <bit[7].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "SRTYPE =  SYNC" for instance <bit[7].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "DDR_CLK_EDGE =  SAME_EDGE" for instance <bit[8].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "INIT =  0" for instance <bit[8].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "SRTYPE =  SYNC" for instance <bit[8].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "DDR_CLK_EDGE =  SAME_EDGE" for instance <bit[9].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "INIT =  0" for instance <bit[9].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "SRTYPE =  SYNC" for instance <bit[9].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "DDR_CLK_EDGE =  SAME_EDGE" for instance <bit[10].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "INIT =  0" for instance <bit[10].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "SRTYPE =  SYNC" for instance <bit[10].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "DDR_CLK_EDGE =  SAME_EDGE" for instance <bit[11].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "INIT =  0" for instance <bit[11].ODDR> in unit <SDR2DDR.2>.
+    Set user-defined property "SRTYPE =  SYNC" for instance <bit[11].ODDR> in unit <SDR2DDR.2>.
+Analyzing module <PixelCounter> in library <work>.
+	ActiveH = 32'sb00000000000000000000001100100000
+	ActiveV = 32'sb00000000000000000000001001011000
+	BackH = 32'sb00000000000000000000000001000000
+	BackV = 32'sb00000000000000000000000000010111
+	FrontH = 32'sb00000000000000000000000000111000
+	FrontV = 32'sb00000000000000000000000000100101
+	Height = 32'sb00000000000000000000001010011010
+	PulseH = 32'sb00000000000000000000000001111000
+	PulseV = 32'sb00000000000000000000000000000110
+	Width = 32'sb00000000000000000000010000010000
+	XWidth = 32'sb00000000000000000000000000001011
+	YWidth = 32'sb00000000000000000000000000001010
+Module <PixelCounter> is correct for synthesis.
+ 
+Analyzing module <Counter.1> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Down = 32'sb00000000000000000000000000000000
+	Initial = 11'bXXXXXXXXXXX
+	Limited = 32'sb00000000000000000000000000000000
+	ResetValue = 11'b00000000000
+	SetValue = 11'b11111111111
+	Width = 32'sb00000000000000000000000000001011
+Module <Counter.1> is correct for synthesis.
+ 
+Analyzing module <Register.3> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Initial = 11'bXXXXXXXXXXX
+	ResetValue = 11'b00000000000
+	SetValue = 11'b11111111111
+	Width = 32'sb00000000000000000000000000001011
+Module <Register.3> is correct for synthesis.
+ 
+Analyzing module <CountCompare.1> in library <work>.
+	CWidth = 32'sb00000000000000000000000000001011
+	CWidthCheck = 32'sb00000000000000000000000000001011
+	Compare = 32'sb00000000000000000000010000001111
+	Width = 32'sb00000000000000000000000000001011
+Module <CountCompare.1> is correct for synthesis.
+ 
+Analyzing module <Counter.2> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Down = 32'sb00000000000000000000000000000000
+	Initial = 10'bXXXXXXXXXX
+	Limited = 32'sb00000000000000000000000000000000
+	ResetValue = 10'b0000000000
+	SetValue = 10'b1111111111
+	Width = 32'sb00000000000000000000000000001010
+Module <Counter.2> is correct for synthesis.
+ 
+Analyzing module <Register.4> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Initial = 10'bXXXXXXXXXX
+	ResetValue = 10'b0000000000
+	SetValue = 10'b1111111111
+	Width = 32'sb00000000000000000000000000001010
+Module <Register.4> is correct for synthesis.
+ 
+Analyzing module <CountCompare.2> in library <work>.
+	CWidth = 32'sb00000000000000000000000000001010
+	CWidthCheck = 32'sb00000000000000000000000000001010
+	Compare = 32'sb00000000000000000000001010011001
+	Width = 32'sb00000000000000000000000000001010
+Module <CountCompare.2> is correct for synthesis.
+ 
+Analyzing module <CountRegion.1> in library <work>.
+	EnableActive = 1'b1
+	EnablePost = 1'b1
+	EnablePre = 1'b0
+	End = 32'sb00000000000000000000001100100000
+	Start = 32'sb00000000000000000000000000000000
+	UseMagnitude = 1'b0
+	Width = 32'sb00000000000000000000000000001011
+Module <CountRegion.1> is correct for synthesis.
+ 
+Analyzing module <Register.5> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Initial = 3'bXXX
+	ResetValue = 3'b010
+	SetValue = 3'b111
+	Width = 32'sb00000000000000000000000000000011
+Module <Register.5> is correct for synthesis.
+ 
+Analyzing module <CountCompare.3> in library <work>.
+	CWidth = 32'sb00000000000000000000000000001010
+	CWidthCheck = 32'sb00000000000000000000000000001010
+	Compare = 32'sb00000000000000000000001100011111
+	Width = 32'sb00000000000000000000000000001011
+Module <CountCompare.3> is correct for synthesis.
+ 
+Analyzing module <CountRegion.2> in library <work>.
+	EnableActive = 1'b1
+	EnablePost = 1'b1
+	EnablePre = 1'b0
+	End = 32'sb00000000000000000000001001011000
+	Start = 32'sb00000000000000000000000000000000
+	UseMagnitude = 1'b0
+	Width = 32'sb00000000000000000000000000001010
+Module <CountRegion.2> is correct for synthesis.
+ 
+Analyzing module <CountCompare.4> in library <work>.
+	CWidth = 32'sb00000000000000000000000000001010
+	CWidthCheck = 32'sb00000000000000000000000000001010
+	Compare = 32'sb00000000000000000000001001010111
+	Width = 32'sb00000000000000000000000000001010
+Module <CountCompare.4> is correct for synthesis.
+ 
+Analyzing module <CountRegion.3> in library <work>.
+	EnableActive = 1'b1
+	EnablePost = 1'b1
+	EnablePre = 1'b1
+	End = 32'sb00000000000000000000001111010000
+	Start = 32'sb00000000000000000000001101011000
+	UseMagnitude = 1'b0
+	Width = 32'sb00000000000000000000000000001011
+Module <CountRegion.3> is correct for synthesis.
+ 
+Analyzing module <Register.6> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Initial = 3'bXXX
+	ResetValue = 3'b001
+	SetValue = 3'b111
+	Width = 32'sb00000000000000000000000000000011
+Module <Register.6> is correct for synthesis.
+ 
+Analyzing module <CountCompare.5> in library <work>.
+	CWidth = 32'sb00000000000000000000000000001010
+	CWidthCheck = 32'sb00000000000000000000000000001010
+	Compare = 32'sb00000000000000000000001101010111
+	Width = 32'sb00000000000000000000000000001011
+Module <CountCompare.5> is correct for synthesis.
+ 
+Analyzing module <CountCompare.6> in library <work>.
+	CWidth = 32'sb00000000000000000000000000001010
+	CWidthCheck = 32'sb00000000000000000000000000001010
+	Compare = 32'sb00000000000000000000001111001111
+	Width = 32'sb00000000000000000000000000001011
+Module <CountCompare.6> is correct for synthesis.
+ 
+Analyzing module <CountRegion.4> in library <work>.
+	EnableActive = 1'b1
+	EnablePost = 1'b1
+	EnablePre = 1'b1
+	End = 32'sb00000000000000000000001010000011
+	Start = 32'sb00000000000000000000001001111101
+	UseMagnitude = 1'b0
+	Width = 32'sb00000000000000000000000000001010
+Module <CountRegion.4> is correct for synthesis.
+ 
+Analyzing module <CountCompare.7> in library <work>.
+	CWidth = 32'sb00000000000000000000000000001010
+	CWidthCheck = 32'sb00000000000000000000000000001010
+	Compare = 32'sb00000000000000000000001001111100
+	Width = 32'sb00000000000000000000000000001010
+Module <CountCompare.7> is correct for synthesis.
+ 
+Analyzing module <CountCompare.8> in library <work>.
+	CWidth = 32'sb00000000000000000000000000001010
+	CWidthCheck = 32'sb00000000000000000000000000001010
+	Compare = 32'sb00000000000000000000001010000010
+	Width = 32'sb00000000000000000000000000001010
+Module <CountCompare.8> is correct for synthesis.
+ 
+Analyzing module <DVIInitial> in library <work>.
+	ClockFreq = 32'sb00000010111110101111000010000000
+	I2CAddress = 7'b1110110
+	I2CDCMD_CWidth = 32'sb00000000000000000000000000000001
+	I2CDCMD_Read = 1'b1
+	I2CDCMD_Write = 1'b0
+	I2CInitVals = 40'b1100000000001001000010000001011001100000
+	I2CMCMD_CWidth = 32'sb00000000000000000000000000000010
+	I2CMCMD_Read = 2'b01
+	I2CMCMD_Restart = 2'b11
+	I2CMCMD_Write = 2'b10
+	I2CRate = 32'sb00000000000000011000011010100000
+Module <DVIInitial> is correct for synthesis.
+ 
+Analyzing module <FIFOInitial.1> in library <work>.
+	A0Width = 32'sb00000000000000000000000000000011
+	A1Width = 32'sb00000000000000000000000000000011
+	Depth = 32'sb00000000000000000000000000000101
+	ShiftBased = 32'sb00000000000000000000000000000001
+	Value = 40'b0100100100100001001100110011010000110110
+	Width = 32'sb00000000000000000000000000001000
+Module <FIFOInitial.1> is correct for synthesis.
+ 
+Analyzing module <Register.2> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Initial = 1'b0
+	ResetValue = 1'b0
+	SetValue = 1'b1
+	Width = 32'sb00000000000000000000000000000001
+Module <Register.2> is correct for synthesis.
+ 
+Analyzing module <ShiftRegister.1> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Initial = 40'b0100100100100001001100110011010000110110
+	PWidth = 32'sb00000000000000000000000000101000
+	ResetValue = 40'bXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+	Reverse = 32'sb00000000000000000000000000000000
+	SWidth = 32'sb00000000000000000000000000001000
+	SetValue = 40'b1111111111111111111111111111111111111111
+Module <ShiftRegister.1> is correct for synthesis.
+ 
+Analyzing module <Register.7> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Initial = 40'b0100100100100001001100110011010000110110
+	ResetValue = 40'bXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+	SetValue = 40'b1111111111111111111111111111111111111111
+	Width = 32'sb00000000000000000000000000101000
+Module <Register.7> is correct for synthesis.
+ 
+Analyzing module <ShiftRegister.2> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Initial = 6'b111110
+	PWidth = 32'sb00000000000000000000000000000110
+	ResetValue = 5'bXXXXX
+	Reverse = 32'sb00000000000000000000000000000000
+	SWidth = 32'sb00000000000000000000000000000001
+	SetValue = 6'b111111
+Module <ShiftRegister.2> is correct for synthesis.
+ 
+Analyzing module <Register.8> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Initial = 6'b111110
+	ResetValue = 5'bXXXXX
+	SetValue = 6'b111111
+	Width = 32'sb00000000000000000000000000000110
+Module <Register.8> is correct for synthesis.
+ 
+Analyzing module <FIFOInitial.2> in library <work>.
+	A0Width = 32'sb00000000000000000000000000000011
+	A1Width = 32'sb00000000000000000000000000000011
+	Depth = 32'sb00000000000000000000000000000101
+	ShiftBased = 32'sb00000000000000000000000000000001
+	Value = 40'b1100000000001001000010000001011001100000
+	Width = 32'sb00000000000000000000000000001000
+Module <FIFOInitial.2> is correct for synthesis.
+ 
+Analyzing module <ShiftRegister.3> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Initial = 40'b1100000000001001000010000001011001100000
+	PWidth = 32'sb00000000000000000000000000101000
+	ResetValue = 40'bXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+	Reverse = 32'sb00000000000000000000000000000000
+	SWidth = 32'sb00000000000000000000000000001000
+	SetValue = 40'b1111111111111111111111111111111111111111
+Module <ShiftRegister.3> is correct for synthesis.
+ 
+Analyzing module <Register.9> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Initial = 40'b1100000000001001000010000001011001100000
+	ResetValue = 40'bXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+	SetValue = 40'b1111111111111111111111111111111111111111
+	Width = 32'sb00000000000000000000000000101000
+Module <Register.9> is correct for synthesis.
+ 
+Analyzing module <I2CDRAMMaster> in library <work>.
+	CAWidth = 32'sb00000000000000000000000000001000
+	ClockFreq = 32'sb00000010111110101111000010000000
+	DWidth = 32'sb00000000000000000000000000001000
+	I2CDCMD_CWidth = 32'sb00000000000000000000000000000001
+	I2CDCMD_Read = 1'b1
+	I2CDCMD_Write = 1'b0
+	I2CMCMD_CWidth = 32'sb00000000000000000000000000000010
+	I2CMCMD_Read = 2'b01
+	I2CMCMD_Restart = 2'b11
+	I2CMCMD_Write = 2'b10
+	I2CRate = 32'sb00000000000000011000011010100000
+	LRWidth = 32'sb00000000000000000000000000010001
+	SAWidth = 32'sb00000000000000000000000000000111
+	STATE_Address = 3'b010
+	STATE_Idle = 3'b000
+	STATE_ReAddress = 3'b101
+	STATE_Read = 3'b110
+	STATE_Restart = 3'b100
+	STATE_SAddress = 3'b001
+	STATE_Stop = 3'b111
+	STATE_Write = 3'b011
+	SWidth = 32'sb00000000000000000000000000000011
+	SingleSlave = 32'sb00000000000000000000000000000001
+	SlaveAddress = 7'b1110110
+	WACWidth = 32'sb00000000000000000000000000000001
+	WAWidth = 32'sb00000000000000000000000000001000
+	WAWords = 32'sb00000000000000000000000000000001
+Module <I2CDRAMMaster> is correct for synthesis.
+ 
+    Set property "xc_pullup = 1" for signal <SDA> in unit <I2CDRAMMaster>.
+    Set property "xc_pullup = 1" for signal <SCL> in unit <I2CDRAMMaster>.
+Analyzing module <I2CMaster> in library <work>.
+	ClockFreq = 32'sb00000010111110101111000010000000
+	CycleMax = 32'sb00000000000000000000000001111101
+	CycleWidth = 32'sb00000000000000000000000000000111
+	I2CMCMD_CWidth = 32'sb00000000000000000000000000000010
+	I2CMCMD_Read = 2'b01
+	I2CMCMD_Restart = 2'b11
+	I2CMCMD_Write = 2'b10
+	I2CRate = 32'sb00000000000000011000011010100000
+	STATE_CheckAck = 3'b011
+	STATE_NOP = 3'b000
+	STATE_Read = 3'b100
+	STATE_Restart = 3'b111
+	STATE_SendAck = 3'b101
+	STATE_Start = 3'b001
+	STATE_Stop = 3'b110
+	STATE_Write = 3'b010
+	STATE_X = 3'bXXX
+Module <I2CMaster> is correct for synthesis.
+ 
+    Set property "xc_pullup = 1" for signal <SDA> in unit <I2CMaster>.
+    Set property "xc_pullup = 1" for signal <SCL> in unit <I2CMaster>.
+Analyzing module <ShiftRegister.4> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Initial = 3'bXXX
+	PWidth = 32'sb00000000000000000000000000000011
+	ResetValue = 3'b000
+	Reverse = 32'sb00000000000000000000000000000000
+	SWidth = 32'sb00000000000000000000000000000001
+	SetValue = 3'b111
+Module <ShiftRegister.4> is correct for synthesis.
+ 
+Analyzing module <Register.12> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Initial = 3'bXXX
+	ResetValue = 3'b000
+	SetValue = 3'b111
+	Width = 32'sb00000000000000000000000000000011
+Module <Register.12> is correct for synthesis.
+ 
+Analyzing module <ShiftRegister.5> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Initial = 8'bXXXXXXXX
+	PWidth = 32'sb00000000000000000000000000001000
+	ResetValue = 8'b00000000
+	Reverse = 32'sb00000000000000000000000000000000
+	SWidth = 32'sb00000000000000000000000000000001
+	SetValue = 8'b11111111
+Module <ShiftRegister.5> is correct for synthesis.
+ 
+Analyzing module <Register.13> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Initial = 8'bXXXXXXXX
+	ResetValue = 8'b00000000
+	SetValue = 8'b11111111
+	Width = 32'sb00000000000000000000000000001000
+Module <Register.13> is correct for synthesis.
+ 
+Analyzing module <Counter.3> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Down = 32'sb00000000000000000000000000000000
+	Initial = 7'bXXXXXXX
+	Limited = 32'sb00000000000000000000000000000000
+	ResetValue = 7'b0000000
+	SetValue = 7'b1111111
+	Width = 32'sb00000000000000000000000000000111
+Module <Counter.3> is correct for synthesis.
+ 
+Analyzing module <Register.14> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Initial = 7'bXXXXXXX
+	ResetValue = 7'b0000000
+	SetValue = 7'b1111111
+	Width = 32'sb00000000000000000000000000000111
+Module <Register.14> is correct for synthesis.
+ 
+Analyzing module <CountCompare.9> in library <work>.
+	CWidth = 32'sb00000000000000000000000000000111
+	CWidthCheck = 32'sb00000000000000000000000000000111
+	Compare = 32'sb00000000000000000000000001111100
+	Width = 32'sb00000000000000000000000000000111
+Module <CountCompare.9> is correct for synthesis.
+ 
+Analyzing module <Counter.4> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Down = 32'sb00000000000000000000000000000000
+	Initial = 2'bXX
+	Limited = 32'sb00000000000000000000000000000000
+	ResetValue = 2'b00
+	SetValue = 2'b11
+	Width = 32'sb00000000000000000000000000000010
+Module <Counter.4> is correct for synthesis.
+ 
+Analyzing module <Register.15> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Initial = 2'bXX
+	ResetValue = 2'b00
+	SetValue = 2'b11
+	Width = 32'sb00000000000000000000000000000010
+Module <Register.15> is correct for synthesis.
+ 
+Analyzing module <Counter.5> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Down = 32'sb00000000000000000000000000000000
+	Initial = 3'bXXX
+	Limited = 32'sb00000000000000000000000000000000
+	ResetValue = 3'b000
+	SetValue = 3'b111
+	Width = 32'sb00000000000000000000000000000011
+Module <Counter.5> is correct for synthesis.
+ 
+Analyzing module <FIFORegister.1> in library <work>.
+	BWLatency = 32'sb00000000000000000000000000000000
+	Conservative = 32'sb00000000000000000000000000000000
+	FWLatency = 32'sb00000000000000000000000000000001
+	Initial = 17'bXXXXXXXXXXXXXXXXX
+	InitialValid = 1'b0
+	ResetValid = 1'b0
+	ResetValue = 17'b00000000000000000
+	Width = 32'sb00000000000000000000000000010001
+Module <FIFORegister.1> is correct for synthesis.
+ 
+Analyzing module <Register.10> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Initial = 17'bXXXXXXXXXXXXXXXXX
+	ResetValue = 17'b00000000000000000
+	SetValue = 17'b11111111111111111
+	Width = 32'sb00000000000000000000000000010001
+Module <Register.10> is correct for synthesis.
+ 
+Analyzing module <FIFORegControl> in library <work>.
+	BWLatency = 32'sb00000000000000000000000000000000
+	FWLatency = 32'sb00000000000000000000000000000001
+	InitialValid = 1'b0
+	ResetValid = 1'b0
+Module <FIFORegControl> is correct for synthesis.
+ 
+Analyzing module <Register.16> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Initial = 1'b0
+	ResetValue = 1'b0
+	SetValue = 1'b1
+	Width = 32'sb00000000000000000000000000000001
+Module <Register.16> is correct for synthesis.
+ 
+Analyzing module <FIFORegister.2> in library <work>.
+	BWLatency = 32'sb00000000000000000000000000000000
+	Conservative = 32'sb00000000000000000000000000000000
+	FWLatency = 32'sb00000000000000000000000000000001
+	Initial = 8'bXXXXXXXX
+	InitialValid = 1'b0
+	ResetValid = 1'b0
+	ResetValue = 8'b00000000
+	Width = 32'sb00000000000000000000000000001000
+Module <FIFORegister.2> is correct for synthesis.
+ 
+Analyzing module <Register.11> in library <work>.
+	AsyncReset = 32'sb00000000000000000000000000000000
+	AsyncSet = 32'sb00000000000000000000000000000000
+	Initial = 8'bXXXXXXXX
+	ResetValue = 8'b00000000
+	SetValue = 8'b11111111
+	Width = 32'sb00000000000000000000000000001000
+Module <Register.11> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <GPIO_LED<0>> in unit <ml505top> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <GPIO_LED<1>> in unit <ml505top> has a constant value of 1 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <vram>.
+    Related source file is "../../src/vram.v".
+WARNING:Xst:647 - Input <ra0<18:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ra1<18:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <wa<18:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 17x32-bit dual-port RAM <Mram_ram> for signal <ram>.
+    Found 17x32-bit dual-port RAM <Mram_ram_ren> for signal <ram>.
+    Found 32-bit register for signal <rd0>.
+    Found 32-bit register for signal <rd1>.
+    Summary:
+	inferred   2 RAM(s).
+	inferred  64 D-type flip-flop(s).
+Unit <vram> synthesized.
+
+
+Synthesizing Unit <Register_1>.
+    Related source file is "../../src/DVI/Register.v".
+    Found 1-bit register for signal <Out<0>>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <Register_1> synthesized.
+
+
+Synthesizing Unit <IORegister>.
+    Related source file is "../../src/IORegister.v".
+    Found 3-bit register for signal <Out>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+Unit <IORegister> synthesized.
+
+
+Synthesizing Unit <CountCompare_1>.
+    Related source file is "../../src/DVI/CountCompare.v".
+WARNING:Xst:647 - Input <Count<9:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <CountCompare_1> synthesized.
+
+
+Synthesizing Unit <CountCompare_2>.
+    Related source file is "../../src/DVI/CountCompare.v".
+WARNING:Xst:647 - Input <Count<8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Count<6:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Count<2:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <CountCompare_2> synthesized.
+
+
+Synthesizing Unit <Register_3>.
+    Related source file is "../../src/DVI/Register.v".
+    Found 11-bit register for signal <Out>.
+    Summary:
+	inferred  11 D-type flip-flop(s).
+Unit <Register_3> synthesized.
+
+
+Synthesizing Unit <Register_4>.
+    Related source file is "../../src/DVI/Register.v".
+    Found 10-bit register for signal <Out>.
+    Summary:
+	inferred  10 D-type flip-flop(s).
+Unit <Register_4> synthesized.
+
+
+Synthesizing Unit <Register_5>.
+    Related source file is "../../src/DVI/Register.v".
+    Found 3-bit register for signal <Out>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+Unit <Register_5> synthesized.
+
+
+Synthesizing Unit <CountCompare_3>.
+    Related source file is "../../src/DVI/CountCompare.v".
+WARNING:Xst:647 - Input <Count<10>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Count<7:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <CountCompare_3> synthesized.
+
+
+Synthesizing Unit <CountCompare_4>.
+    Related source file is "../../src/DVI/CountCompare.v".
+WARNING:Xst:647 - Input <Count<8:7>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Count<5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Count<3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <CountCompare_4> synthesized.
+
+
+Synthesizing Unit <Register_6>.
+    Related source file is "../../src/DVI/Register.v".
+    Found 3-bit register for signal <Out>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+Unit <Register_6> synthesized.
+
+
+Synthesizing Unit <CountCompare_5>.
+    Related source file is "../../src/DVI/CountCompare.v".
+WARNING:Xst:647 - Input <Count<10>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Count<7>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Count<5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Count<3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <CountCompare_5> synthesized.
+
+
+Synthesizing Unit <CountCompare_6>.
+    Related source file is "../../src/DVI/CountCompare.v".
+WARNING:Xst:647 - Input <Count<10>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Count<5:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <CountCompare_6> synthesized.
+
+
+Synthesizing Unit <CountCompare_7>.
+    Related source file is "../../src/DVI/CountCompare.v".
+WARNING:Xst:647 - Input <Count<8:7>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Count<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <CountCompare_7> synthesized.
+
+
+Synthesizing Unit <CountCompare_8>.
+    Related source file is "../../src/DVI/CountCompare.v".
+WARNING:Xst:647 - Input <Count<8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Count<6:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Count<0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <CountCompare_8> synthesized.
+
+
+Synthesizing Unit <Register_2>.
+    Related source file is "../../src/DVI/Register.v".
+    Found 1-bit register for signal <Out<0>>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <Register_2> synthesized.
+
+
+Synthesizing Unit <Register_7>.
+    Related source file is "../../src/DVI/Register.v".
+    Found 40-bit register for signal <Out>.
+    Summary:
+	inferred  40 D-type flip-flop(s).
+Unit <Register_7> synthesized.
+
+
+Synthesizing Unit <Register_8>.
+    Related source file is "../../src/DVI/Register.v".
+    Found 6-bit register for signal <Out>.
+    Summary:
+	inferred   6 D-type flip-flop(s).
+Unit <Register_8> synthesized.
+
+
+Synthesizing Unit <Register_9>.
+    Related source file is "../../src/DVI/Register.v".
+    Found 40-bit register for signal <Out>.
+    Summary:
+	inferred  40 D-type flip-flop(s).
+Unit <Register_9> synthesized.
+
+
+Synthesizing Unit <CountCompare_9>.
+    Related source file is "../../src/DVI/CountCompare.v".
+WARNING:Xst:647 - Input <Count<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <CountCompare_9> synthesized.
+
+
+Synthesizing Unit <Register_12>.
+    Related source file is "../../src/DVI/Register.v".
+    Found 3-bit register for signal <Out>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+Unit <Register_12> synthesized.
+
+
+Synthesizing Unit <Register_13>.
+    Related source file is "../../src/DVI/Register.v".
+    Found 8-bit register for signal <Out>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <Register_13> synthesized.
+
+
+Synthesizing Unit <Register_14>.
+    Related source file is "../../src/DVI/Register.v".
+    Found 7-bit register for signal <Out>.
+    Summary:
+	inferred   7 D-type flip-flop(s).
+Unit <Register_14> synthesized.
+
+
+Synthesizing Unit <Register_15>.
+    Related source file is "../../src/DVI/Register.v".
+    Found 2-bit register for signal <Out>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <Register_15> synthesized.
+
+
+Synthesizing Unit <Register_10>.
+    Related source file is "../../src/DVI/Register.v".
+    Found 17-bit register for signal <Out>.
+    Summary:
+	inferred  17 D-type flip-flop(s).
+Unit <Register_10> synthesized.
+
+
+Synthesizing Unit <Register_16>.
+    Related source file is "../../src/DVI/Register.v".
+    Found 1-bit register for signal <Out<0>>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <Register_16> synthesized.
+
+
+Synthesizing Unit <Register_11>.
+    Related source file is "../../src/DVI/Register.v".
+    Found 8-bit register for signal <Out>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <Register_11> synthesized.
+
+
+Synthesizing Unit <PixelFeeder>.
+    Related source file is "../../src/PixelFeeder.v".
+WARNING:Xst:646 - Signal <feeder_full> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <color_idx> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 4x24-bit ROM for signal <color>.
+    Found 1-bit register for signal <feedhalf>.
+    Found 32-bit down counter for signal <ignore_count>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <PixelFeeder> synthesized.
+
+
+Synthesizing Unit <SDR2DDR_1>.
+    Related source file is "../../src/DVI/SDR2DDR.v".
+Unit <SDR2DDR_1> synthesized.
+
+
+Synthesizing Unit <SDR2DDR_2>.
+    Related source file is "../../src/DVI/SDR2DDR.v".
+Unit <SDR2DDR_2> synthesized.
+
+
+Synthesizing Unit <Counter_1>.
+    Related source file is "../../src/DVI/Counter.v".
+    Found 11-bit adder for signal <RegIn>.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <Counter_1> synthesized.
+
+
+Synthesizing Unit <Counter_2>.
+    Related source file is "../../src/DVI/Counter.v".
+    Found 10-bit adder for signal <RegIn>.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <Counter_2> synthesized.
+
+
+Synthesizing Unit <CountRegion_1>.
+    Related source file is "../../src/DVI/CountRegion.v".
+Unit <CountRegion_1> synthesized.
+
+
+Synthesizing Unit <CountRegion_2>.
+    Related source file is "../../src/DVI/CountRegion.v".
+Unit <CountRegion_2> synthesized.
+
+
+Synthesizing Unit <CountRegion_3>.
+    Related source file is "../../src/DVI/CountRegion.v".
+Unit <CountRegion_3> synthesized.
+
+
+Synthesizing Unit <CountRegion_4>.
+    Related source file is "../../src/DVI/CountRegion.v".
+Unit <CountRegion_4> synthesized.
+
+
+Synthesizing Unit <ShiftRegister_1>.
+    Related source file is "../../src/DVI/ShiftRegister.v".
+Unit <ShiftRegister_1> synthesized.
+
+
+Synthesizing Unit <ShiftRegister_2>.
+    Related source file is "../../src/DVI/ShiftRegister.v".
+Unit <ShiftRegister_2> synthesized.
+
+
+Synthesizing Unit <ShiftRegister_3>.
+    Related source file is "../../src/DVI/ShiftRegister.v".
+Unit <ShiftRegister_3> synthesized.
+
+
+Synthesizing Unit <ShiftRegister_4>.
+    Related source file is "../../src/DVI/ShiftRegister.v".
+Unit <ShiftRegister_4> synthesized.
+
+
+Synthesizing Unit <ShiftRegister_5>.
+    Related source file is "../../src/DVI/ShiftRegister.v".
+Unit <ShiftRegister_5> synthesized.
+
+
+Synthesizing Unit <Counter_3>.
+    Related source file is "../../src/DVI/Counter.v".
+    Found 7-bit adder for signal <RegIn>.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <Counter_3> synthesized.
+
+
+Synthesizing Unit <Counter_4>.
+    Related source file is "../../src/DVI/Counter.v".
+    Found 2-bit adder for signal <RegIn>.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <Counter_4> synthesized.
+
+
+Synthesizing Unit <Counter_5>.
+    Related source file is "../../src/DVI/Counter.v".
+    Found 3-bit adder for signal <RegIn>.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <Counter_5> synthesized.
+
+
+Synthesizing Unit <FIFORegControl>.
+    Related source file is "../../src/DVI/FIFORegControl.v".
+Unit <FIFORegControl> synthesized.
+
+
+Synthesizing Unit <PixelCounter>.
+    Related source file is "../../src/DVI/PixelCounter.v".
+Unit <PixelCounter> synthesized.
+
+
+Synthesizing Unit <FIFOInitial_1>.
+    Related source file is "../../src/DVI/FIFOInitial.v".
+Unit <FIFOInitial_1> synthesized.
+
+
+Synthesizing Unit <FIFOInitial_2>.
+    Related source file is "../../src/DVI/FIFOInitial.v".
+Unit <FIFOInitial_2> synthesized.
+
+
+Synthesizing Unit <I2CMaster>.
+    Related source file is "../../src/DVI/I2CMaster.v".
+WARNING:Xst:647 - Input <AckReady> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <CurrentState> of Case statement line 340 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <CurrentState> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+    Found finite state machine <FSM_0> for signal <CurrentState>.
+    -----------------------------------------------------------------------
+    | States             | 8                                              |
+    | Transitions        | 31                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 9                                              |
+    | Clock              | Clock                     (rising_edge)        |
+    | Clock enable       | NextOp                    (positive)           |
+    | Reset              | Reset                     (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Using one-hot encoding for signal <LastState>.
+    Found 1-bit tristate buffer for signal <SDA>.
+    Found 1-bit tristate buffer for signal <SCL>.
+    Found 8-bit register for signal <LastState>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   8 D-type flip-flop(s).
+	inferred   2 Tristate(s).
+Unit <I2CMaster> synthesized.
+
+
+Synthesizing Unit <FIFORegister_1>.
+    Related source file is "../../src/DVI/FIFORegister.v".
+WARNING:Xst:646 - Signal <Full> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <FIFORegister_1> synthesized.
+
+
+Synthesizing Unit <FIFORegister_2>.
+    Related source file is "../../src/DVI/FIFORegister.v".
+WARNING:Xst:646 - Signal <Full> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <FIFORegister_2> synthesized.
+
+
+Synthesizing Unit <DVIData>.
+    Related source file is "../../src/DVI/DVIData.v".
+Unit <DVIData> synthesized.
+
+
+Synthesizing Unit <I2CDRAMMaster>.
+    Related source file is "../../src/DVI/I2CDRAMMaster.v".
+WARNING:Xst:1780 - Signal <WACount> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <I2CTransferComplete> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <AddressOutReady> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <CurrentState> of Case statement line 389 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <CurrentState> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+    Found finite state machine <FSM_1> for signal <CurrentState>.
+    -----------------------------------------------------------------------
+    | States             | 8                                              |
+    | Transitions        | 23                                             |
+    | Inputs             | 6                                              |
+    | Outputs            | 11                                             |
+    | Clock              | Clock                     (rising_edge)        |
+    | Reset              | Reset                     (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <I2CDRAMMaster> synthesized.
+
+
+Synthesizing Unit <DVIInitial>.
+    Related source file is "../../src/DVI/DVIInitial.v".
+Unit <DVIInitial> synthesized.
+
+
+Synthesizing Unit <DVI>.
+    Related source file is "../../src/DVI/DVI.v".
+WARNING:Xst:646 - Signal <InitDone> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <DVI> synthesized.
+
+
+Synthesizing Unit <ml505top>.
+    Related source file is "../../src/ml505top.v".
+WARNING:Xst:647 - Input <GPIO_SW_S> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <vram_we> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:653 - Signal <vram_wd> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
+WARNING:Xst:653 - Signal <vram_wa> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000000000000.
+WARNING:Xst:646 - Signal <vram_rd1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <vram_rd0> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
+WARNING:Xst:653 - Signal <vram_ra1> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000000000000.
+WARNING:Xst:646 - Signal <vram_dout> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <vram_din> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <vram_addr_dout> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:1780 - Signal <vram_addr_din> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <line_y1_valid> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <line_y0_valid> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <line_x1_valid> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <line_x0_valid> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <line_trigger> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <line_ready> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <line_point> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <line_color_valid> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <line_color> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <filler_valid> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <filler_ready> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <filler_color> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fifo_reset> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <dvi_video_ready> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <clkdiv0_g> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <clk90_g> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <clk50_g> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <clk200_g> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <clk0_g> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 26-bit register for signal <count_r>.
+    Found 26-bit adder for signal <next_count_r$addsub0000> created at line 145.
+    Found 4-bit register for signal <reset_r>.
+    Found 3-bit register for signal <rst_sr>.
+    Found 19-bit up counter for signal <vram_ra0>.
+    Found 19-bit comparator greatequal for signal <vram_ra0$cmp_ge0000> created at line 203.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  33 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <ml505top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 17x32-bit dual-port RAM                               : 2
+# ROMs                                                 : 1
+ 4x24-bit ROM                                          : 1
+# Adders/Subtractors                                   : 6
+ 10-bit adder                                          : 1
+ 11-bit adder                                          : 1
+ 2-bit adder                                           : 1
+ 26-bit adder                                          : 1
+ 3-bit adder                                           : 1
+ 7-bit adder                                           : 1
+# Counters                                             : 1
+ 32-bit down counter                                   : 1
+# Registers                                            : 44
+ 1-bit register                                        : 22
+ 10-bit register                                       : 1
+ 11-bit register                                       : 1
+ 17-bit register                                       : 1
+ 2-bit register                                        : 1
+ 26-bit register                                       : 1
+ 3-bit register                                        : 8
+ 32-bit register                                       : 2
+ 4-bit register                                        : 1
+ 40-bit register                                       : 2
+ 7-bit register                                        : 1
+ 8-bit register                                        : 3
+# Tristates                                            : 2
+ 1-bit tristate buffer                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <dvi/DVIInit/I2CControl/CurrentState/FSM> on signal <CurrentState[1:3]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 010   | 011
+ 011   | 010
+ 100   | 110
+ 101   | 111
+ 110   | 101
+ 111   | 100
+-------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <dvi/DVIInit/I2CControl/Master/CurrentState/FSM> on signal <CurrentState[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 010   | 010
+ 011   | 011
+ 100   | 100
+ 101   | 101
+ 110   | 110
+ 111   | 111
+-------------------
+WARNING:Xst:1290 - Hierarchical block <vbuf0> is unconnected in block <ml505top>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <Value> is unconnected in block <DOBuff>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <FVPReg> is unconnected in block <DVIData>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <DOBuff> is unconnected in block <I2CControl>.
+   It will be removed from the design.
+WARNING:Xst:1710 - FF/Latch <Out_0> (without init value) has a constant value of 0 in block <FSM.State>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Out_0> (without init value) has a constant value of 0 in block <FSM.State>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Out_0> (without init value) has a constant value of 0 in block <SAReg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Out_16> (without init value) has a constant value of 0 in block <Value>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <FFd1> (without init value) has a constant value of 0 in block <FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <LastState_0> of sequential type is unconnected in block <Master>.
+WARNING:Xst:2677 - Node <LastState_2> of sequential type is unconnected in block <Master>.
+WARNING:Xst:2677 - Node <LastState_3> of sequential type is unconnected in block <Master>.
+WARNING:Xst:2677 - Node <LastState_4> of sequential type is unconnected in block <Master>.
+WARNING:Xst:2677 - Node <LastState_5> of sequential type is unconnected in block <Master>.
+WARNING:Xst:1290 - Hierarchical block <SAReg> is unconnected in block <Master>.
+   It will be removed from the design.
+
+Synthesizing (advanced) Unit <vram>.
+INFO:Xst:3226 - The RAM <Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <rd0>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 17-word x 32-bit                    |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <we>            | high     |
+    |     addrA          | connected to signal <wa>            |          |
+    |     diA            | connected to signal <wd>            |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 17-word x 32-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     addrB          | connected to signal <ra0>           |          |
+    |     doB            | connected to signal <rd0>           |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3226 - The RAM <Mram_ram_ren> will be implemented as a BLOCK RAM, absorbing the following register(s): <rd1>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 17-word x 32-bit                    |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <we>            | high     |
+    |     addrA          | connected to signal <wa>            |          |
+    |     diA            | connected to signal <wd>            |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 17-word x 32-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     addrB          | connected to signal <ra1>           |          |
+    |     doB            | connected to signal <rd1>           |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <vram> synthesized (advanced).
+WARNING:Xst:2677 - Node <LastState_0> of sequential type is unconnected in block <I2CMaster>.
+WARNING:Xst:2677 - Node <LastState_2> of sequential type is unconnected in block <I2CMaster>.
+WARNING:Xst:2677 - Node <LastState_3> of sequential type is unconnected in block <I2CMaster>.
+WARNING:Xst:2677 - Node <LastState_4> of sequential type is unconnected in block <I2CMaster>.
+WARNING:Xst:2677 - Node <LastState_5> of sequential type is unconnected in block <I2CMaster>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 17x32-bit dual-port block RAM                         : 2
+# ROMs                                                 : 1
+ 4x24-bit ROM                                          : 1
+# Adders/Subtractors                                   : 6
+ 10-bit adder                                          : 1
+ 11-bit adder                                          : 1
+ 2-bit adder                                           : 1
+ 26-bit adder                                          : 1
+ 3-bit adder                                           : 1
+ 7-bit adder                                           : 1
+# Counters                                             : 1
+ 32-bit down counter                                   : 1
+# Registers                                            : 225
+ Flip-Flops                                            : 225
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <Out_16> (without init value) has a constant value of 0 in block <Register_10>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <RgnAX/FSM.State/Out_0> (without init value) has a constant value of 0 in block <PixelCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RgnAY/FSM.State/Out_0> (without init value) has a constant value of 0 in block <PixelCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <SAReg/Out_0> (without init value) has a constant value of 0 in block <I2CMaster>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:1901 - Instance user_clk_pll in unit ml505top of type PLL_BASE has been replaced by PLL_ADV
+WARNING:Xst:524 - All outputs of the instance <dvi/DVIInit/I2CControl/DOBuff/Value> of the block <Register_11> are unconnected in block <ml505top>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:2677 - Node <dvi/DVIInit/I2CControl/DOBuff/Cntrl/FullReg/Out_0> of sequential type is unconnected in block <ml505top>.
+
+Optimizing unit <ml505top> ...
+
+Optimizing unit <Register_7> ...
+
+Optimizing unit <Register_9> ...
+
+Optimizing unit <Register_13> ...
+
+Optimizing unit <Register_10> ...
+
+Optimizing unit <Register_11> ...
+
+Optimizing unit <PixelFeeder> ...
+
+Optimizing unit <SDR2DDR_2> ...
+
+Optimizing unit <Counter_1> ...
+
+Optimizing unit <Counter_2> ...
+
+Optimizing unit <ShiftRegister_5> ...
+
+Optimizing unit <Counter_3> ...
+
+Optimizing unit <PixelCounter> ...
+
+Optimizing unit <FIFOInitial_1> ...
+
+Optimizing unit <FIFOInitial_2> ...
+
+Optimizing unit <DVIData> ...
+WARNING:Xst:1710 - FF/Latch <dvi/DVIInit/I2CControl/CurrentState_FSM_FFd1> (without init value) has a constant value of 0 in block <ml505top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <dvi/DVIData/FVPReg/Out_0> is unconnected in block <ml505top>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block ml505top, actual ratio is 0.
+
+Final Macro Processing ...
+
+Processing Unit <ml505top> :
+	Found 4-bit shift register for signal <reset_r_3>.
+	Found 5-bit shift register for signal <dvi/DVIInit/I2CCmdInit/SHIFT.DataShft/SHIFT.Register/Out_32>.
+	Found 5-bit shift register for signal <dvi/DVIInit/I2CCmdInit/SHIFT.DataShft/SHIFT.Register/Out_33>.
+	Found 5-bit shift register for signal <dvi/DVIInit/I2CCmdInit/SHIFT.DataShft/SHIFT.Register/Out_34>.
+	Found 5-bit shift register for signal <dvi/DVIInit/I2CCmdInit/SHIFT.DataShft/SHIFT.Register/Out_35>.
+	Found 5-bit shift register for signal <dvi/DVIInit/I2CCmdInit/SHIFT.DataShft/SHIFT.Register/Out_36>.
+	Found 5-bit shift register for signal <dvi/DVIInit/I2CCmdInit/SHIFT.DataShft/SHIFT.Register/Out_37>.
+	Found 5-bit shift register for signal <dvi/DVIInit/I2CCmdInit/SHIFT.DataShft/SHIFT.Register/Out_38>.
+	Found 5-bit shift register for signal <dvi/DVIInit/I2CCmdInit/SHIFT.DataShft/SHIFT.Register/Out_39>.
+	Found 5-bit shift register for signal <dvi/DVIInit/I2CCmdInit/SHIFT.VldShft/SHIFT.Register/Out_4>.
+Unit <ml505top> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 193
+ Flip-Flops                                            : 193
+# Shift Registers                                      : 10
+ 4-bit shift register                                  : 1
+ 5-bit shift register                                  : 9
+
+=========================================================================
+INFO:Xst:2146 - In block <ml505top>, Shifter <dvi/DVIInit/I2CCmdInit/SHIFT.DataShft/SHIFT.Register/Mshreg_Out_27> <dvi/DVIInit/I2CCmdInit/SHIFT.DataShft/SHIFT.Register/Mshreg_Out_30> are equivalent, XST will keep only <dvi/DVIInit/I2CCmdInit/SHIFT.DataShft/SHIFT.Register/Mshreg_Out_27>.
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : ml505top.ngr
+Top Level Output File Name         : ml505top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 31
+
+Cell Usage :
+# BELS                             : 388
+#      GND                         : 1
+#      INV                         : 37
+#      LUT1                        : 26
+#      LUT2                        : 16
+#      LUT3                        : 61
+#      LUT4                        : 45
+#      LUT5                        : 23
+#      LUT6                        : 64
+#      MUXCY                       : 56
+#      VCC                         : 1
+#      XORCY                       : 58
+# FlipFlops/Latches                : 216
+#      FD                          : 79
+#      FDE                         : 25
+#      FDR                         : 36
+#      FDRE                        : 45
+#      FDRSE                       : 6
+#      FDS                         : 2
+#      FDSE                        : 9
+#      ODDR                        : 14
+# Shift Registers                  : 9
+#      SRLC16E                     : 9
+# Clock Buffers                    : 6
+#      BUFG                        : 6
+# IO Buffers                       : 30
+#      IBUF                        : 1
+#      IBUFG                       : 1
+#      IOBUF                       : 1
+#      OBUF                        : 26
+#      OBUFT                       : 1
+# Others                           : 2
+#      pixel_fifo                  : 1
+#      PLL_ADV                     : 1
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 5vlx110tff1136-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             216  out of  69120     0%  
+ Number of Slice LUTs:                  281  out of  69120     0%  
+    Number used as Logic:               272  out of  69120     0%  
+    Number used as Memory:                9  out of  17920     0%  
+       Number used as SRL:                9
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    318
+   Number with an unused Flip Flop:     102  out of    318    32%  
+   Number with an unused LUT:            37  out of    318    11%  
+   Number of fully used LUT-FF pairs:   179  out of    318    56%  
+   Number of unique control sets:        17
+
+IO Utilization: 
+ Number of IOs:                          31
+ Number of bonded IOBs:                  30  out of    640     4%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                6  out of     32    18%  
+ Number of PLL_ADVs:                      1  out of      6    16%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+cpu_clk                            | BUFG                   | 225   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 4.115ns (Maximum Frequency: 243.013MHz)
+   Minimum input arrival time before clock: 2.675ns
+   Maximum output required time after clock: 5.606ns
+   Maximum combinational path delay: 3.937ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'cpu_clk'
+  Clock period: 4.115ns (frequency: 243.013MHz)
+  Total number of paths / destination ports: 10213 / 421
+-------------------------------------------------------------------------
+Delay:               4.115ns (Levels of Logic = 3)
+  Source:            pixelfeed/ignore_count_8 (FF)
+  Destination:       dvi/DVIData/VideoBuf/bit[0].ODDR (FF)
+  Source Clock:      cpu_clk rising
+  Destination Clock: cpu_clk rising
+
+  Data Path: pixelfeed/ignore_count_8 to dvi/DVIData/VideoBuf/bit[0].ODDR
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDSE:C->Q             2   0.471   1.074  pixelfeed/ignore_count_8 (pixelfeed/ignore_count_8)
+     LUT6:I0->O            1   0.094   0.973  pixelfeed/and0000_cmp_eq0000240 (pixelfeed/and0000_cmp_eq0000240)
+     LUT6:I1->O            6   0.094   0.507  pixelfeed/and0000_cmp_eq0000262 (pixelfeed/and0000_cmp_eq0000)
+     LUT6:I5->O            8   0.094   0.374  pixelfeed/video<0>11 (video<0>)
+     ODDR:D2                   0.434          dvi/DVIData/VideoBuf/bit[0].ODDR
+    ----------------------------------------
+    Total                      4.115ns (1.187ns logic, 2.928ns route)
+                                       (28.8% logic, 71.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'cpu_clk'
+  Total number of paths / destination ports: 276 / 188
+-------------------------------------------------------------------------
+Offset:              2.675ns (Levels of Logic = 2)
+  Source:            user_clk_pll:LOCKED (PAD)
+  Destination:       dvi/DVIInit/I2CCmdInit/SHIFT.DataShft/SHIFT.Register/Mshreg_Out_33 (FF)
+  Destination Clock: cpu_clk rising
+
+  Data Path: user_clk_pll:LOCKED to dvi/DVIInit/I2CCmdInit/SHIFT.DataShft/SHIFT.Register/Mshreg_Out_33
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    PLL_ADV:LOCKED        16   0.000   1.151  user_clk_pll (pll_lock)
+     LUT6:I0->O           76   0.094   0.615  rst2 (rst)
+     LUT4:I3->O           14   0.094   0.407  dvi/DVIInit/I2CCmdInit/_or00001 (dvi/DVIInit/I2CCmdInit/_or0000)
+     SRLC16E:CE                0.314          dvi/DVIInit/I2CCmdInit/SHIFT.DataShft/SHIFT.Register/Mshreg_Out_33
+    ----------------------------------------
+    Total                      2.675ns (0.502ns logic, 2.173ns route)
+                                       (18.8% logic, 81.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'cpu_clk'
+  Total number of paths / destination ports: 135 / 23
+-------------------------------------------------------------------------
+Offset:              5.606ns (Levels of Logic = 3)
+  Source:            count_r_12 (FF)
+  Destination:       DVI_RESET_B (PAD)
+  Source Clock:      cpu_clk rising
+
+  Data Path: count_r_12 to DVI_RESET_B
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.471   1.074  count_r_12 (count_r_12)
+     LUT6:I0->O            4   0.094   1.085  rst171 (rst171)
+     LUT6:I0->O            1   0.094   0.336  vram_valid1 (DVI_RESET_B_OBUF)
+     OBUF:I->O                 2.452          DVI_RESET_B_OBUF (DVI_RESET_B)
+    ----------------------------------------
+    Total                      5.606ns (3.111ns logic, 2.495ns route)
+                                       (55.5% logic, 44.5% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 5 / 5
+-------------------------------------------------------------------------
+Delay:               3.937ns (Levels of Logic = 2)
+  Source:            user_clk_pll:LOCKED (PAD)
+  Destination:       DVI_RESET_B (PAD)
+
+  Data Path: user_clk_pll:LOCKED to DVI_RESET_B
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    PLL_ADV:LOCKED        16   0.000   1.055  user_clk_pll (pll_lock)
+     LUT6:I1->O            1   0.094   0.336  vram_valid1 (DVI_RESET_B_OBUF)
+     OBUF:I->O                 2.452          DVI_RESET_B_OBUF (DVI_RESET_B)
+    ----------------------------------------
+    Total                      3.937ns (2.546ns logic, 1.391ns route)
+                                       (64.7% logic, 35.3% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 31.00 secs
+Total CPU time to Xst completion: 29.99 secs
+ 
+--> 
+
+
+Total memory usage is 674696 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  102 (   0 filtered)
+Number of infos    :   11 (   0 filtered)
+

@@ -1,0 +1,12 @@
+# Output products list for <mig_rdf>
+fifo_generator_readme.txt
+fifo_generator_ug175.pdf
+mig_rdf.asy
+mig_rdf.gise
+mig_rdf.ngc
+mig_rdf.v
+mig_rdf.veo
+mig_rdf.xco
+mig_rdf.xise
+mig_rdf_flist.txt
+mig_rdf_xmdf.tcl
